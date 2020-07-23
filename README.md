@@ -89,4 +89,29 @@
 
 ## JOBS
 
-`GET /jobs`: Return all **Jobs** 
+`GET /jobs?page=1`: Return 7 **Jobs** per page
+
+```json
+{
+  "total": "175",
+  "perPage": 7,
+  "page": 1,
+  "lastPage": 25,
+  "data": [
+    {
+      "id": 175,
+      "customername": "Glauber Brack",
+      "jobtitle": "API to make a crawler of freelancer websites",
+      "jobdescripition": "Some descripition...",
+      "joblink": "http://iluminare.dev/jobs/api",
+      "verifiedPayment": true,
+      "jobprice": "Mais de R$ 10.000,00",
+      "country": "Brasil",
+      "workanadate": "23 de Julho de 2020",
+      "created_at": "2020-07-23",
+      "updated_at": "2020-07-23"
+    }
+  ]
+}
+
+```
