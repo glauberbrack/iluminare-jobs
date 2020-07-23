@@ -34,7 +34,7 @@
 }
 ```
 
-## STARTUP
+## USERS
 
 `GET /users`: Return all users that are **Users**
 

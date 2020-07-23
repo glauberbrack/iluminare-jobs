@@ -3,11 +3,11 @@
 const Database = use('Database')
 
 class JobController {
-  async index ({request, response}){
+  async index ({request, response, params}){
     try{
-      const page = parseInt(request.query.page)
+      const { page } = request.all()
 
-      const jobs = await Database.select('*').from('jobs').orderBy('id', 'desc').paginate(page)
+      const jobs = await Database.select('*').from('jobs').orderBy('id', 'desc').paginate(page, 7)
       return jobs
 
     } catch(err){
