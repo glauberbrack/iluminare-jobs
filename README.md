@@ -9,137 +9,63 @@
 - \$ If you've adonis-cli installed, run the command right bellow `adonis serve --dev`
 - \$ If you does not have adonis cli installed, run `node ace start`
 
+
 ## AUTHENTICATION
 
-`POST /session/startup`: Signin as **Startup**
+`POST /sessions/user`: Signin as **User**
 
 #### Body example:
 
 ```json
 {
-	"email": "lawyer@uplaw.com",
+	"email": "glauber@brack.com.br",
 	"password": "glauber"
 }
 ```
 
-`POST /session/lawyer`: Signin as **Lawyer**
+`POST /sessions/admins`: Signin as **Admin**
 
 #### Body example:
 
 ```json
 {
-	"email": "lawyer@uplaw.com",
+	"email": "glauber@brack.com.br",
 	"password": "glauber"
 }
 ```
 
 ## STARTUP
 
-`GET /startups`: Return all users that are **Startup**
+`GET /users`: Return all users that are **Users**
 
-`POST /startups`: Create a new **Startup**
+`POST /users`: Create a new **User**
 
 #### Body example:
 
 ```json
 {
-	"name": "Glauber Brack",
-	"cpfcnpj": "11122233300",
-	"position": "owner",
-	"email": "glauber@brack.com.br",
-	"city": "Bebedouro",
-	"state": "São Paulo",
-	"zipcode": "14700005",
-  	"password": "glauber",
-  	"phone":  "1798805220",
-  	"birthdate": "1994-06-16"
+	"username": "glauber",
+  "email": "glauber@brack.com.br",
+  "password": "glauber"
 }
 ```
 #### :warning: To use the next routes, the user MUST be authenticated
 
-`GET /startups/:id`: Show one **Startup** by ID
+`GET /users/:id`: Show one **User** by ID
 
-`PUT /startups/:id`: Update one **Startup** by ID
-
-#### Body example:
-
-```json
-{
-	"name": "Glauber Brack",
-	"cpfcnpj": "11122233300",
-	"position": "owner",
-	"email": "glauber@brack.com.br",
-	"city": "Bebedouro",
-	"state": "São Paulo",
-	"zipcode": "14700005",
-  	"password": "glauber",
-  	"phone":  "1798805220",
-  	"birthdate": "1994-06-16"
-}
-```
-
-## LAWYERS
-
-`GET /lawyers`: Return all users that are **Lawyers**
-
-`POST /lawyers`: Create a new **Lawyers**
+`PUT /users/:id`: Update one **User** by ID
 
 #### Body example:
 
 ```json
 {
-	"name": "Glauber Brack",
-  	"cpfcnpj": "11122233300",
-  	"oab": "12345 SP",
-	"position": "owner",
-	"email": "glauber@brack.com.br",
-	"city": "Bebedouro",
-	"state": "São Paulo",
-	"zipcode": "14700005",
-  	"password": "glauber",
-  	"phone":  "1798805220",
-  	"birthdate": "1994-06-16",
-  	"industry": "criminal"
-}
-```
-#### :warning: To use the next routes, the user MUST be authenticated
-
-`GET /lawyers/:id`: Show one **Lawyers** by ID
-
-`PUT /lawyers/:id`: Update one **Lawyers** by ID
-
-#### Body example:
-
-```json
-{
-	"name": "Glauber Brack",
-	"cpfcnpj": "11122233300",
-  	"oab": "12345 SP",
-	"position": "owner",
-	"email": "glauber@brack.com.br",
-	"city": "Bebedouro",
-	"state": "São Paulo",
-	"zipcode": "14700005",
-  	"password": "glauber",
-	"phone":  "1798805220",
-  	"birthdate": "1994-06-16",
-  	"industry": "criminal"
+	"username": "glauber1",
+  "email": "glauber1@brack.com.br",
+  "password": "glauber1"
 }
 ```
 
 ## PASSWORD RECOVERY
-
-`GET /lawyers`: Return all users that are **Lawyers**
-
-`POST /forgot`: Create a new request to recovery password. This endpoint will send an email to the registred email with a Token.
-
-#### Body example:
-
-```json
-{
-	"email": "glauber@brack.com.br"
-}
-```
 
 `GET /forgot`: Verify if the token exists.
 
@@ -161,10 +87,6 @@
 }
 ```
 
-## FIND LAWYERS
+## JOBS
 
-`GET /find/lawyers/industry=:industry`: Return all **Lawyers** that are for certain **Industry**
-
-`GET /find/lawyers/uf=:uf`: Return all **Lawyers** that are for certain **UF**
-
-`GET /find/lawyers/zipcode=:zipcode/industry=:industry`: Return all **Lawyers** that are for certain **Zipcode** and certain **Industry**
+`GET /jobs`: Return all **Jobs** 

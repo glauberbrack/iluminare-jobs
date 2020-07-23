@@ -14,9 +14,9 @@ class UserAdminSessionController {
         return response.status(401).send({ error: { message: 'Usuário não ativo no sistema.' } })
       }
 
-      const isStartup = await Database.table('role_user').where('user_id', user.id).first()
+      const isAdmin = await Database.table('role_user').where('user_id', user.id).first()
 
-      if(isStartup.role_id == 1){
+      if(isAdmin.role_id == 1){
 
         try {
           const token = await auth.attempt(email, password)

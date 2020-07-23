@@ -2,7 +2,7 @@
 
 const Route = use('Route')
 
-// Startups
+// Users
 Route.get('/users', 'UserGuestController.index')
 Route.post('/users', 'UserGuestController.store')
 Route.get('/users/:id', 'UserGuestController.show')
