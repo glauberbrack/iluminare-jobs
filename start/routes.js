@@ -19,7 +19,8 @@ Route.get('/forgot', 'ForgotPasswordController.verifyToken')
 Route.put('/forgot/:token', 'ForgotPasswordController.update')
 
 // Jobs
-Route.get('/jobs', 'JobController.index')
+Route.get('/jobs8', 'JobController.index8')
+Route.get('/jobs4', 'JobController.index4')
 
 // Permission
 Route.group(() => {
