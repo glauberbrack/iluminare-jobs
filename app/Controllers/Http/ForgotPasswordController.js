@@ -14,21 +14,24 @@ class ForgotPasswordController {
 
       const user = await User.findByOrFail('email', email)
 
-      user.token = crypto.randomBytes(10).toString('hex')
-      user.token_created_at = new Date()
+      const newPassword = Math.random().toString(20).substring(7)
+
+      user.password = newPassword
 
       await user.save()
 
-      await Mail.send(
-        ['emails.forgot_password'],
-        {token: user.token },
-        message => {
-          message
-            .to(user.email)
-            .from('glauber@brack.com.br')
-            .subject('Recuperação de senha')
-        }
-      )
+      return (newPassword)
+
+      // await Mail.send(
+      //   ['emails.forgot_password'],
+      //   {token: user.token },
+      //   message => {
+      //     message
+      //       .to(user.email)
+      //       .from('no-reply@iluminare.dev')
+      //       .subject('Recuperação de senha')
+      //   }
+      // )
     } catch (err) {
       console.log(err)
       return response.status(err.status).send({ error: { message: 'Email not found.' } })
