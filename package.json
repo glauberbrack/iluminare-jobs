@@ -26,7 +26,7 @@
     "@adonisjs/lucid-slugify": "^1.0.3",
     "@adonisjs/mail": "^3.0.10",
     "adonis-acl": "^1.1.1",
-    "aws-sdk": "^2.705.0",
+    "aws-sdk": "^2.814.0",
     "pg": "^8.2.1",
     "request": "^2.88.2",
     "slug": "^3.3.0",
